@@ -6,6 +6,21 @@ using namespace std;
 int** triangleInf(int n)
 {
 	//YOUR CODE
+	int** tab = new int*[n];
+
+	for (int i = 0; i < n; i++){
+
+		tab[i] = new int[i + 1];
+
+		for (int j = 0; j <= i; j++){
+			if(j == 0 || j == i)
+				tab[i][j] = 1;
+			else
+			tab[i][j] = tab[i - 1][j - 1] + tab[i - 1][j];
+		}
+
+	}
+	return tab;
 
 }
 

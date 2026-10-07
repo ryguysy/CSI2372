@@ -1,7 +1,7 @@
 /*Ex5.h : Ex5 a2 CSI2372A*/
 
 #include <iostream>
-#include <process.h>		//for exit() 
+//#include <process.h>		//for exit() 
 #include <string.h>		//for strcmp, strcpy..
 #include <limits.h>		// for INT_MAX 
 using namespace std;

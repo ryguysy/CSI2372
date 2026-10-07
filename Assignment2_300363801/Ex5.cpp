@@ -2,7 +2,7 @@
 
 #include "Ex5.h"
 
-main()
+int main()
 {
 	int i;
 	char *chain[nb_ch];		//array of pointers on char
@@ -14,7 +14,7 @@ main()
 		{
 		chain[i]=new char[size_ch];		// memory allocation
 		cin.getline(chain[i],size_ch,'\t');	//seizure of the string
-		cin.ignor(INT_MAX,'\n');		// ignore line return
+		cin.ignore(INT_MAX,'\n');		// ignore line return
 		}
 
 	display(chain,nb_ch);					
@@ -25,7 +25,7 @@ main()
 	
 		switch(choice)
 			{
-			case '1':	diplay(chain,nb_ch);
+			case '1':	display(chain,nb_ch);
 				break;
 			case '2':	replace(chain,nb_ch,size_ch);	
 				break;
@@ -66,7 +66,10 @@ char menu(void)
 /********************************************************************************/
 void display(char* tab[], int const& nbre)
 {
-	//YOUR CODE 
+	//YOUR CODE
+	for(int i = 0; i < nbre; i++){
+		cout << "The string " << i << " is: " << tab[i] << endl;
+	}
 }
 
 
@@ -89,6 +92,21 @@ void replace(char* tab[], int const& nbre, int const& size)
 
 
 	//YOUR CODE 
+
+	if (numero < 0 || numero >= nbre) {
+		cout << "Invalid string number." << endl;
+		return;
+	}
+
+	char* replacement = new char[size]; // allocate memory for the new string
+	cout << "Enter the new string: ";
+	cin.ignore(INT_MAX,'\n');
+	cin.getline(replacement,size,'\t');
+
+	delete[] tab[numero]; // free the memory of the old string
+	tab[numero] = replacement;
+
+
 }
 
 /********************************************************************************/
@@ -97,5 +115,19 @@ void replace(char* tab[], int const& nbre, int const& size)
 void sort(char* tab[], int const& nbre)
 {
 	// YOUR CODE 
+
+	//sort strings in tab lexicographically
+	//use insertion sort algorithm
+	for(int i = 1; i < nbre; i++){
+		char* key = tab[i];
+		int j = i - 1;
+
+		while(j >= 0 && strcmp(tab[j], key) > 0){
+			tab[j + 1] = tab[j];
+			j--;
+		}
+		tab[j + 1] = key;
+	}
+
 }
 
