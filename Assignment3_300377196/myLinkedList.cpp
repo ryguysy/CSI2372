@@ -1,9 +1,13 @@
 /*Ex2 - a3 CSI2372A*/
+// linked list of students and grades with a menu to display, add, remove and average
 
 #include "myLinkedList.h"
 
 int main()
 {
+	int choice;
+	int number = 0;
+	Evaluation* first = NULL;
 	
 	do
 	{
@@ -38,6 +42,8 @@ int main()
 /*
 *add() Function*
 **/
+// takes the first element and the number of elements, adds a new student
+// after the position the user picks, returns the first element
 Evaluation* add(Evaluation* p, int& number)
 {
 	//YOUR CODE COMES HERE
@@ -78,6 +84,8 @@ Evaluation* add(Evaluation* p, int& number)
 /**
 *remove() Function*
 **/
+// takes the first element and the number of elements, deletes the element
+// number the user picks, returns the first element
 
 Evaluation* remove(Evaluation* p, int& number)
 {
@@ -118,6 +126,7 @@ Evaluation* remove(Evaluation* p, int& number)
 /**
 *display() Function *
 **/
+// takes the first element and prints every student and grade
 void display(Evaluation* p)
 {
 	//YOUR CODE COMES HERE
@@ -139,6 +148,8 @@ void display(Evaluation* p)
 /**
 *average() Function *
 ***/
+// takes the first element and the number of elements, prints the class average
+// returns 1 if it worked, 0 if the list is empty
 int average(Evaluation* p, int const& nbre)
 {
 	//YOUR CODE COMES HERE

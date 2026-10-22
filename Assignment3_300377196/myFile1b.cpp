@@ -1,4 +1,5 @@
 /*Ex1b - a3 CSI2372A*/
+// checks if a poker hand of 5 cards has at least one pair
 
 #include <iostream>
 using namespace std;
@@ -15,6 +16,7 @@ struct Card
 typedef Card Hand[5];
 
 /* testPair() function*/
+// takes a hand (array of 5 cards), returns true if two cards have the same face
 bool testPair(const Hand& h)
 {
 	//YOUR CODE  
