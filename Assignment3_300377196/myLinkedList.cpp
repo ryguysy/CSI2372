@@ -138,7 +138,7 @@ void display(Evaluation* p)
  
 	while (p != NULL) {
 		cout << "Student :" << p->student << endl;
-		cout << "The grade is :" << p->grade << endl;
+		cout << "The grade is :" << p->grade << endl << endl;
 		p = p->next;
 	}
 }
